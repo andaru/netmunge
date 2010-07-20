@@ -1,0 +1,50 @@
+pr1.lab:
+===============================================================================
+ BGP Router ID:172.16.128.7     AS:64514       Local AS:64514      
+===============================================================================
+BGP Admin State         : Up          BGP Oper State              : Up
+Total Peer Groups       : 15          Total Peers                 : 6         
+Total BGP Paths         : 59841       Total Path Memory           : 10170940  
+Total IPv4 Remote Rts   : 645141      Total IPv4 Rem. Active Rts  : 322560    
+Total IPv6 Remote Rts   : 6274        Total IPv6 Rem. Active Rts  : 3136      
+Total Supressed Rts     : 0           Total Hist. Rts             : 0         
+Total Decay Rts         : 0         
+ 
+Total VPN Peer Groups   : 0           Total VPN Peers             : 0         
+Total VPN Local Rts     : 2         
+Total VPN-IPv4 Rem. Rts : 8           Total VPN-IPv4 Rem. Act. Rts: 3         
+Total VPN-IPv6 Rem. Rts : 0           Total VPN-IPv6 Rem. Act. Rts: 0         
+Total L2-VPN Rem. Rts   : 0           Total L2VPN Rem. Act. Rts   : 0         
+Total VPN Supp. Rts     : 0           Total VPN Hist. Rts         : 0         
+Total VPN Decay Rts     : 0         
+Total MVPN-IPv4 Rem Rts : 0           Total MVPN-IPv4 Rem Act Rts : 0         
+
+===============================================================================
+BGP Summary
+===============================================================================
+Neighbor
+                   AS PktRcvd InQ  Up/Down   State|Rcv/Act/Sent (Addr Family)
+                      PktSent OutQ
+-------------------------------------------------------------------------------
+121.200.225.146
+                64536   14527    0 05d00h38m 1/1/362 (IPv4)                    
+                        14828    0                                             
+121.200.225.158
+                64651       0    0 03h29m01s Idle                              
+                            1    0                                             
+10.0.1.57
+                64514   23652    0 05d00h39m 0/0/322581 (IPv4)                 
+                       624057    0                                             
+172.16.0.21
+                64514       0    0 08d05h25m Idle                              
+                            1    0                                             
+172.16.128.8
+                64514  657901    0 05d00h39m 322562/322546/16 (IPv4)           
+                        23728    0           3138/3136/2 (IPv6)                
+                                             3/3/2 (VpnIPv4)                   
+172.16.128.13
+                64514  655736    0 05d00h38m 322578/13/16 (IPv4)               
+                        23438    0           3136/0/2 (IPv6)                   
+                                             5/0/2 (VpnIPv4)                   
+===============================================================================
+

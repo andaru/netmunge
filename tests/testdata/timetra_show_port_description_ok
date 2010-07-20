@@ -1,0 +1,59 @@
+ar1.foo:
+
+===============================================================================
+Port Descriptions on Slot 1
+===============================================================================
+Port Id        Description                                                     
+-------------------------------------------------------------------------------
+1/1/1          Patch cross-over to ar2.foo 1/1/1                           
+1/1/2          Patch to br1.foo port 2/11                                     
+1/1/3          Patch to br2.foo port 2/12                                     
+1/1/4          Patch cross-over to ar2.foo 1/1/4                           
+1/1/5          Patch cross-over to ar3.foo 9/1                          
+1/1/6          patch to abc1.foo port 1/1/1                                    
+1/1/7          Patch cross-over to ar4.foo 9/1                           
+1/1/8          test port connected to Smartbits port 1/3                     
+1/1/9          Patch to acc1.foo port 1/1/1                                 
+1/1/10         Patch to acc1.bar 1/1/21                                     
+
+===============================================================================
+Port Descriptions on Slot 2
+===============================================================================
+Port Id        Description                                                     
+-------------------------------------------------------------------------------
+2/1/1          10/100/Gig Ethernet SFP                                         
+2/1/2          10/100/Gig Ethernet SFP                                         
+2/1/3          10/100/Gig Ethernet SFP                                         
+2/1/4          10/100/Gig Ethernet SFP                                         
+2/1/5          10/100/Gig Ethernet SFP                                         
+2/1/6          10/100/Gig Ethernet SFP                                         
+2/1/7          10/100/Gig Ethernet SFP                                         
+2/1/8          10/100/Gig Ethernet SFP                                         
+2/1/9          10/100/Gig Ethernet SFP                                         
+2/1/10         10/100/Gig Ethernet SFP                                         
+2/1/11         10/100/Gig Ethernet SFP                                         
+2/1/12         10/100/Gig Ethernet SFP                                         
+2/1/13         10/100/Gig Ethernet SFP                                         
+2/1/14         10/100/Gig Ethernet SFP                                         
+2/1/15         10/100/Gig Ethernet SFP                                         
+2/1/16         10/100/Gig Ethernet SFP                                         
+2/1/17         10/100/Gig Ethernet SFP                                         
+2/1/18         10/100/Gig Ethernet SFP                                         
+2/1/19         10/100/Gig Ethernet SFP                                         
+2/1/20         10/100/Gig Ethernet SFP                                         
+
+===============================================================================
+Port Descriptions on Slot A
+===============================================================================
+Port Id        Description                                                     
+-------------------------------------------------------------------------------
+A/1            10/100 Ethernet TX                                              
+
+===============================================================================
+Port Descriptions on Slot B
+===============================================================================
+Port Id        Description                                                     
+-------------------------------------------------------------------------------
+B/1            10/100 Ethernet TX                                              
+===============================================================================
+

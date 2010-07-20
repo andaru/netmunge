@@ -1,0 +1,7 @@
+r1:
+Interface                      Status         Protocol Description
+Et0/0                          admin down     down     
+Gi0/0                          admin down     down     
+Gi1/0                          up             up       ubuntu:tap0
+Gi2/0                          up             up       gi1/0 r2
+
