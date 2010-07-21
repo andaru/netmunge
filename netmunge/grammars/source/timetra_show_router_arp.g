@@ -12,7 +12,7 @@ parser TimosShowRouterArp:
     token MAC: '([0-9a-f]{2}:){5}[0-9a-f]{2}'
     token EXPIRY: '[0-9]{2}h[0-9]{2}m[0-9]{2}s'
 
-    rule entry: IPV4 MAC EXPIRY WORD INTF
+    rule entry: {{ MAC = '' }} IPV4 MAC? EXPIRY WORD INTF
                 {{ return (('arp3tuple', IPV4, MAC, INTF)) }}
 
     rule parse: ( ANY )* '\-{3,}' {{ arps = set() }}

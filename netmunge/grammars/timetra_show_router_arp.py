@@ -22,8 +22,10 @@ class TimosShowRouterArp(runtime.Parser):
     Context = runtime.Context
     def entry(self, _parent=None):
         _context = self.Context(_parent, self._scanner, 'entry', [])
+        MAC = ''
         IPV4 = self._scan('IPV4', context=_context)
-        MAC = self._scan('MAC', context=_context)
+        if self._peek('MAC', 'EXPIRY', context=_context) == 'MAC':
+            MAC = self._scan('MAC', context=_context)
         EXPIRY = self._scan('EXPIRY', context=_context)
         WORD = self._scan('WORD', context=_context)
         INTF = self._scan('INTF', context=_context)
