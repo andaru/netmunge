@@ -19,7 +19,7 @@ import os
 
 import unittest
 
-from netmunge import parser
+import netmunge
 
 
 TEST_DATA = os.path.join('tests', 'testdata')
@@ -29,13 +29,19 @@ class ParserTest(unittest.TestCase):
     """Tests for the parser module."""
 
     def setUp(self):
-        self.parser = parser.Parser()
+        self.parser = netmunge.Parser()
         
     def testCiscoShowArp(self):
         """This should match."""
         g1 = self.parser.get_grammar('cisco', 'show arp')
         self.assert_('CiscoShowArp' in dir(g1))
         self.assert_('parse' in dir(g1))
+
+    def testCiscoShowArpViaModule(self):
+        """This should match."""
+        st = open(os.path.join(TEST_DATA, 'cisco_show_arp')).read()
+        g1 = netmunge.parse('cisco', 'show arp', st)
+        print g1
 
     def testCiscoShowArpValidTrailing(self):
         """This should also match."""
