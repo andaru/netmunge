@@ -35,16 +35,17 @@ from netmunge.grammars import timetra_show_router_bgp_summary
 
 GRAMMARS = {
     # Cisco IOS
-    ('cisco', r'sh(o|ow)? arp(?: .*)?'): cisco_show_arp,
+    ('cisco', r'sh(o|ow)? arp(?: [^|]*)?'): cisco_show_arp,
             
     ('cisco', r'sh(o|ow)? int(?:e|er|erf|erfa|erfac|erface)? desc(?:r|ri|rip|'
      'ript|ripti|riptio|ription)?'): cisco_show_interface_description,
 
     # Alcatel/Timetra TimOS
-    ('timetra', r'sh(o|ow)? rout(?:e|er)? arp(?: .*)?'): timetra_show_router_arp,
+    ('timetra', r'sh(o|ow)? rout(?:e|er)? arp(?: [^|]*)?'):
+    timetra_show_router_arp,
     
     ('timetra', r'sh(o|ow)? rout(?:e|er)? bgp? su(m|mm|mma|mmar|mmary)?'):
-    timetra_show_router_arp,
+    timetra_show_router_bgp_summary,
     
     ('timetra', r'sh(o|ow)? port? desc(?:r|ri|rip|ript|ripti|riptio|ription)?'):
     timetra_show_port_description,
