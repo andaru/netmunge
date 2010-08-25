@@ -18,7 +18,7 @@ from yapps import runtime
 
 class CiscoShowArpScanner(runtime.Scanner):
     patterns = [
-        ("'Protocol.*Interface'", re.compile('Protocol.*Interface')),
+        ("'(Protocol.*Interface)?'", re.compile('(Protocol.*Interface)?')),
         ("'ARPA'", re.compile('ARPA')),
         ("'Internet'", re.compile('Internet')),
         ('\\s+', re.compile('\\s+')),
@@ -46,10 +46,10 @@ class CiscoShowArp(runtime.Parser):
 
     def parse(self, _parent=None):
         _context = self.Context(_parent, self._scanner, 'parse', [])
-        while self._peek("'Protocol.*Interface'", 'ANY', context=_context) == 'ANY':
-            ANY = self._scan('ANY', context=_context)
-        self._scan("'Protocol.*Interface'", context=_context)
         arps = set()
+        while self._peek("'(Protocol.*Interface)?'", 'ANY', context=_context) == 'ANY':
+            ANY = self._scan('ANY', context=_context)
+        self._scan("'(Protocol.*Interface)?'", context=_context)
         while self._peek('END', "'Internet'", context=_context) == "'Internet'":
             entry = self.entry(_context)
             arps.add(entry)

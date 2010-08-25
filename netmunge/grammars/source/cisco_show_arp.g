@@ -26,6 +26,6 @@ parser CiscoShowArp:
     rule entry: 'Internet' IPV4 AGE MAC 'ARPA' INTF
                 {{ return (('arpv4', IPV4, convert_mac(MAC), INTF)) }}
 
-    rule parse: ( ANY )* 'Protocol.*Interface' {{ arps = set() }}
+    rule parse: {{ arps = set() }} ( ANY )* '(Protocol.*Interface)?'
                 (entry {{ arps.add(entry) }})*
                 END {{ return arps }}
