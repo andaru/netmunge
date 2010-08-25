@@ -22,7 +22,7 @@ setuptools.setup(
     name='netmunge',
     version='0.1',
     description='A library for munging network element text command output',
-    install_requires=['yapps2',
+    install_requires=[# 'yapps2',  # Build yapps2 yourself (download from amitp's stanford site).
                       ],
     url='http://code.google.com/p/netmunge/',
     author='Andrew Fort',
