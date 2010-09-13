@@ -12,7 +12,7 @@ TEST_DATA = os.path.join('tests', 'testdata')
 class CiscoShowProcessCpuTest(unittest.TestCase):
     """Tests for the cisco_show_process_cpu.CiscoShowProcessCpu class."""
 
-    def testCiscoShowArp(self):
+    def testCiscoShowProcessCpu(self):
         infile = open(os.path.join(TEST_DATA, 'cisco_show_process_cpu'))
         indata = infile.read()
         out = sorted(cisco_show_process_cpu.parse('parse', indata))
