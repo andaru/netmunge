@@ -23,6 +23,7 @@ import re
 from netmunge.grammars import cisco_show_arp
 from netmunge.grammars import cisco_show_interface_description
 from netmunge.grammars import cisco_show_ip_ospf_neighbor
+from netmunge.grammars import cisco_show_process_cpu
 from netmunge.grammars import timetra_show_port_description
 from netmunge.grammars import timetra_show_router_arp
 from netmunge.grammars import timetra_show_router_bgp_summary
@@ -43,6 +44,8 @@ GRAMMARS = {
             
     ('cisco', r'sh(o|ow)? int(?:e|er|erf|erfa|erfac|erface)? desc(?:r|ri|rip|'
      'ript|ripti|riptio|ription)?'): cisco_show_interface_description,
+
+    ('cisco', r'sh(o|ow)? proc(e|es|ess)? c(p|pu)?'): cisco_show_process_cpu,
 
     # Alcatel/Timetra TimOS
     ('timetra', r'sh(o|ow)? rout(?:e|er)? arp(?: [^|]*)?'):
@@ -90,13 +93,15 @@ class Parser(object):
                     return self._regexes[reg][vendor]
         raise ValueError('No grammar found for (%r, %r)' % (vendor, command))
 
-    def parse(self, vendor, command, router_output):
+    def parse(self, vendor, command, router_output, strip_command=True):
         """Parses output of a router command for a given vendor.
 
         Args:
           vendor: A string, the vendor name to search for.
           command: A string, the command that was entered.
           router_output: A string, the router's response - our input.
+          strip_command: A boolean; if True, strip the command of any
+            trailing pipe arguments, etc.
 
         Returns:
           An iterable of tuples (the tabulated data).
@@ -107,6 +112,8 @@ class Parser(object):
         Raises:
           ValueError: There was no grammar for the vendor and command.
         """
+        if strip_command and command.rfind('|') != -1:
+            command = command[:command.rfind('|')].strip()
         grammar = self._grammars.get((vendor, command))
         if grammar is None:
             grammar = self.get_grammar(vendor, command)
@@ -117,5 +124,5 @@ class Parser(object):
 _parser = Parser()
 
 
-def parse(vendor, command, input):
-    return _parser.parse(vendor, command, input)
+def parse(vendor, command, input, strip_command=True):
+    return _parser.parse(vendor, command, input, strip_command=strip_command)
