@@ -22,6 +22,7 @@ import re
 
 from netmunge.grammars import cisco_show_arp
 from netmunge.grammars import cisco_show_interface_description
+from netmunge.grammars import cisco_show_ip_ospf_neighbor
 from netmunge.grammars import timetra_show_port_description
 from netmunge.grammars import timetra_show_router_arp
 from netmunge.grammars import timetra_show_router_bgp_summary
@@ -36,6 +37,9 @@ from netmunge.grammars import timetra_show_router_bgp_summary
 GRAMMARS = {
     # Cisco IOS
     ('cisco', r'sh(o|ow)? arp(?: [^|]*)?'): cisco_show_arp,
+
+    ('cisco', r'sh(o|ow)? ip o(s|sp|spf)? n(e|ei|eig|eigh|eighb|eighbo|'
+     'eighbor)?'): cisco_show_ip_ospf_neighbor,
             
     ('cisco', r'sh(o|ow)? int(?:e|er|erf|erfa|erfac|erface)? desc(?:r|ri|rip|'
      'ript|ripti|riptio|ription)?'): cisco_show_interface_description,

@@ -1,4 +1,4 @@
-# "show arp" parser for Cisco IOS
+# "show interface description" parser for Cisco IOS
 #
 
 def _d(oper_status):
